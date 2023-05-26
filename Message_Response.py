@@ -1,18 +1,20 @@
+from dotenv import dotenv_values
 import Data.Messages.MessagesMethod as Messages
 import discord
 intents = discord.Intents.default()
 intents.message_content = True
 
 client = discord.Client(intents=intents)
+env_vars = dotenv_values('.env')
 
-Hello_messages = ["hello","hola","hi","hey","hey yo","hey there","howdy","yo","bonjour","ciao","namaste"]
 
 @client.event
 async def on_ready():
-    print('Frequency is Started')
+    print('Wave is Started')
 
 @client.event
 async def on_message(message):
+    Hello_messages = ["hello","hola","hi","hey","hey yo","hey there","howdy","yo","bonjour","ciao","namaste"]
     if message.author == client.user:
         return
 
@@ -20,4 +22,4 @@ async def on_message(message):
         await message.channel.send("Hey there! What's up?")    
 
     
-client.run('MTEwODg1NjM2NjE5OTc1NDc4Mg.GyRpZV.N5LXkfvxyEoTQEakuwOZJQxNUYQoWleEe3lpfo')
+client.run(env_vars['BotToken'])
