@@ -1,2 +1,2 @@
-# Frequency
-Frequency is an discord bot developed by Hartz Frequency
+# Wave
+wave is an discord bot developed by Hartz Frequency
