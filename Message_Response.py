@@ -13,18 +13,37 @@ env_vars = dotenv_values('.env')
 async def on_ready():
     print('Wave is Started')
 
+
 @client.event
 async def on_message(message):
+    # Ignore messages sent by the bot itself
     if message.author == client.user:
         return
 
+    # Check if the received message is a hello message
     if message.content.lower() in Messages.Hello_messages:
-        Reply=Messages.HelloReply()
-        await message.channel.send(Reply)    
+        Reply = Messages.HelloReply()
+        await message.channel.send(Reply)
 
+    # React to a specific message
+
+    # Add a reaction if the message content is "wave"
+    if message.content.lower() == 'wave':
+        await message.add_reaction('👋')
+
+    # Additional features
+
+    # Help Command
+    if message.content.lower() == '!help':
+        help_message = "I am Wave Bot. Here are some available commands:\n" \
+                       "`!hello` - Say hello to the bot\n" \
+                       "`!help` - Show this help message"
+        await message.channel.send(help_message)
+
+    # Reaction On cool
     if message.content == 'cool':
         await message.add_reaction('\U0001F60E')
-
+    # Reply Of Middle Finger in chats
     if message.content == '\U0001F595':
         await message.add_reaction('\U0001F92C')
 
