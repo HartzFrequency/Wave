@@ -1,16 +1,12 @@
 from dotenv import dotenv_values
+import Data.MessagesData as Messages
+
 import discord
-from discord import Intents
-
-import Data.Messages.MessagesData as Messages
-
-# Load environment variables from .env file
-env_vars = dotenv_values('.env')
-
-# Configure Discord client with intents
-intents = Intents.default()
+intents = discord.Intents.default()
 intents.message_content = True
+
 client = discord.Client(intents=intents)
+env_vars = dotenv_values('.env')
 
 
 @client.event
@@ -43,6 +39,38 @@ async def on_message(message):
                        "`!hello` - Say hello to the bot\n" \
                        "`!help` - Show this help message"
         await message.channel.send(help_message)
+
+    # Reaction On cool
+    if message.content == 'cool':
+        await message.add_reaction('\U0001F60E')
+    # Reply Of Middle Finger in chats
+    if message.content == '\U0001F595':
+        await message.add_reaction('\U0001F92C')
+
+@client.event
+async def on_message_edit(before,after):
+    #Message Edit log
+    if before.content != after.content:
+        await before.channel.send(
+            f'>>> '
+            f'{before.author} edit a message. \n'
+            f'Before: {before.content}\n'
+            f'After: {after.content}'
+        )
+    
+@client.event
+async def on_reaction_add(reaction,user):
+    if reaction.emoji == '\U0001F595':
+        await reaction.message.channel.send(f'Fuck You {user}')
+
+    #Reaction logs
+    if user == client.user:
+        pass
+    else:
+        await reaction.message.channel.send(
+            f'>>> '
+            f'{user} reacted with {reaction.emoji}'
+        )
 
 
 client.run(env_vars['BotToken'])
