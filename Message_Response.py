@@ -25,14 +25,6 @@ async def on_message(message):
         Reply = Messages.HelloReply()
         await message.channel.send(Reply)
 
-    # React to a specific message
-
-    # Add a reaction if the message content is "wave"
-    if message.content.lower() == 'wave':
-        await message.add_reaction('👋')
-
-    # Additional features
-
     # Help Command
     if message.content.lower() == '!help':
         help_message = "I am Wave Bot. Here are some available commands:\n" \
@@ -40,9 +32,14 @@ async def on_message(message):
                        "`!help` - Show this help message"
         await message.channel.send(help_message)
 
+    # Add a reaction if the message content is "wave"
+    if message.content.lower() == 'wave':
+        await message.add_reaction('👋')
+
     # Reaction On cool
-    if message.content == 'cool':
+    if message.content.lower() == 'cool':
         await message.add_reaction('\U0001F60E')
+    
     # Reply Of Middle Finger in chats
     if message.content == '\U0001F595':
         await message.add_reaction('\U0001F92C')
@@ -64,6 +61,7 @@ async def on_reaction_add(reaction,user):
         await reaction.message.channel.send(f'Fuck You {user}')
 
     #Reaction logs
+    #Preventing to give self reation logs
     if user == client.user:
         pass
     else:
