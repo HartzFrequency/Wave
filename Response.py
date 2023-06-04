@@ -1,15 +1,19 @@
+# Import required modules
 from dotenv import dotenv_values
 import Data.MessagesData as Messages
-
 import discord
+
+# Set up discord intents
 intents = discord.Intents.default()
 intents.message_content = True
 
+# Create a custom Discord client class
 class MyClient(discord.Client):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
     async def on_ready(self):
+        # Called when the bot is ready and connected to the server
         print('Wave is Started')
 
     async def on_message(self, message):
@@ -66,6 +70,9 @@ class MyClient(discord.Client):
             )
 
 
+# Load environment variables from .env file
 env_vars = dotenv_values('.env')
+
+# Create an instance of the custom client class and run the bot
 client = MyClient(intents=intents)
 client.run(env_vars['BotToken'])
