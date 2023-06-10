@@ -5,7 +5,7 @@ import random
 Hello_messages = ["hello","hola","hi","hey","hey yo","hey there","howdy","yo","bonjour","ciao","namaste"]
 
 #Different types of hello messages replies
-hello_messages_replies = [
+Hello_messages_Replies = [
     "Hello there!",
     "Hi, how's it going?",
     "Hey, what's up?",
