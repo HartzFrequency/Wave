@@ -114,7 +114,61 @@ Hello_messages_Replies = [
     "Hello, hope you're enjoying your day so far!",
     "Hi, ready to explore new ideas?",
     "Hey, what's the latest gossip? Fill me in!",
-    "Greetings, how may I be of assistance to you?"
+    "Greetings, how may I be of assistance to you?",
+    "Hola",  # Spanish
+    "Salutations",  # English
+    "Greetings",  # English
+    "Bonjour",  # French
+    "Ciao",  # Italian
+    "Namaste",  # Hindi
+    "Konnichiwa",  # Japanese
+    "Annyeonghaseyo",  # Korean
+    "Hallo",  # German
+    "Olá",  # Portuguese
+    "Salaam",  # Arabic
+    "Nǐ hǎo",  # Mandarin Chinese
+    "Hej",  # Swedish
+    "Merhaba",  # Turkish
+    "Shalom",  # Hebrew
+    "Privet",  # Russian
+    "Sawasdee",  # Thai
+    "Guten Tag",  # German
+    "Dia duit",  # Irish
+    "Hei",  # Norwegian
+    "Szia",  # Hungarian
+    "Dobrý den",  # Czech
+    "Zdravo",  # Serbian
+    "Aloha",  # Hawaiian
+    "Sveiki",  # Latvian
+    "Marhaba",  # Arabic
+    "God dag",  # Danish
+    "Kia ora",  # Maori
+    "Kaixo",  # Basque
+    "Ahoj",  # Slovak
+    "Moïen",  # Luxembourgish
+    "Labas",  # Lithuanian
+    "Dzień dobry",  # Polish
+    "Xin chào",  # Vietnamese
+    "Halo",  # Indonesian
+    "Sain baina uu",  # Mongolian
+    "Mingalarba",  # Burmese
+    "Zdravo",  # Bosnian
+    "Salam",  # Persian
+    "Përshëndetje",  # Albanian
+    "Szia",  # Finnish
+    "Salam",  # Urdu
+    "Jambo",  # Swahili
+    "Hallo",  # Dutch
+    "Dobar dan",  # Croatian
+    "Salut",  # Romanian
+    "Moikka",  # Finnish
+    "Hoi",  # Dutch
+    "Tere",  # Estonian
+    "Salut",  # Haitian Creole
+    "Privyet",  # Ukrainian
+    "Salam",  # Azerbaijani
+    "Kumusta",  # Filipino
+    "Sawubona",  # Zulu
 ]
 
 def HelloReply():
